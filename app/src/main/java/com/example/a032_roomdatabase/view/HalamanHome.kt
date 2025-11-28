@@ -1,3 +1,5 @@
+package com.example.a032_roomdatabase.view.uicontroller
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -34,7 +36,7 @@ import com.example.a032_roomdatabase.R
 import com.example.a032_roomdatabase.room.Siswa
 import com.example.a032_roomdatabase.view.route.DestinasiHome
 import com.example.a032_roomdatabase.viewmodel.HomeViewModel
-import com.example.a032_roomdatabase.viewmodel.PenyediaViewModel
+import com.example.a032_roomdatabase.viewmodel.provider.PenyediaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -76,6 +78,7 @@ fun HomeScreen(
         )
     }
 }
+
 @Composable
 fun BodyHome(
     itemSiswa: List<Siswa>,
@@ -99,6 +102,7 @@ fun BodyHome(
         }
     }
 }
+
 @Composable
 fun ListSiswa(
     itemSiswa: List<Siswa>,
@@ -114,6 +118,7 @@ fun ListSiswa(
         }
     }
 }
+
 @Composable
 fun DataSiswa(
     siswa: Siswa,
