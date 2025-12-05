@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.compose.icons)
     //Room
     implementation(libs.bundles.room)
+    implementation(libs.androidx.material3)
     ksp(libs.room.compiler)
     //ViewModel
     implementation(libs.lifecycle.viewmodel.compose)
