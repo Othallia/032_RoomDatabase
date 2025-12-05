@@ -7,8 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.example.a032_roomdatabase.repositori.RepositoriSiswa
 import com.example.a032_roomdatabase.room.Siswa
 
-class EntryViewModel(private val repositoriSiswa: RepositoriSiswa) : ViewModel() {
-
+class EntryViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel() {
     /**
      * Berisi status Siswa saat ini
      */
