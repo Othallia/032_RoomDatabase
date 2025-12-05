@@ -1,4 +1,6 @@
-package com.example.a032_roomdatabase.room
+import com.example.a032_roomdatabase.room.Siswa
+
+(package com.example.a032_roomdatabase.room
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -23,4 +25,6 @@ interface SiswaDao {
     @Delete
     suspend fun delete(siswa: Siswa)
 
+    @Update
+    suspend fun update(siswa: Siswa)
 }
