@@ -23,28 +23,31 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import com.example.a032_roomdatabase.R
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.a032_roomdatabase.R
 import com.example.a032_roomdatabase.room.Siswa
 import com.example.a032_roomdatabase.view.Route.DestinasiDetailSiswa
 import com.example.a032_roomdatabase.view.uicontroller.SiswaTopAppBar
-import com.example.a032_roomdatabase.viewmodel.provider.DetailSiswaUiState
-import com.example.a032_roomdatabase.viewmodel.provider.DetailViewModel
+import com.example.a032_roomdatabase.viewmodel.DetailSiswaUiState
+import com.example.a032_roomdatabase.viewmodel.DetailViewModel
 import com.example.a032_roomdatabase.viewmodel.provider.PenyediaViewModel
+import com.example.a032_roomdatabase.viewmodel.toSiswa
 import kotlinx.coroutines.launch
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailSiswaScreen(
-    //navigateToEditItem: (Int) -> Unit,
+    navigateToEditItem: (Int) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: DetailViewModel = viewModel(factory = PenyediaViewModel.Factory)
@@ -61,7 +64,7 @@ fun DetailSiswaScreen(
             val uiState = viewModel.uiDetailState.collectAsState()
             FloatingActionButton(
                 onClick = {
-                    //navigateToEditItem(uiState.value.detailSiswa.id)
+                    navigateToEditItem(uiState.value.detailSiswa.id)
                 },
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large))
@@ -88,6 +91,7 @@ fun DetailSiswaScreen(
         )
     }
 }
+
 @Composable
 private fun BodyDetailDataSiswa(
     detailSiswaUiState: DetailSiswaUiState,
@@ -123,6 +127,7 @@ private fun BodyDetailDataSiswa(
         }
     }
 }
+
 @Composable
 fun DetailDataSiswa(
     siswa: Siswa, modifier: Modifier = Modifier
@@ -173,6 +178,7 @@ fun DetailDataSiswa(
 
     }
 }
+
 @Composable
 private fun BarisDetailData(
     @StringRes labelResID: Int, itemDetail: String, modifier: Modifier = Modifier
@@ -180,7 +186,7 @@ private fun BarisDetailData(
     Row(modifier = modifier) {
         Text(stringResource(labelResID))
         Spacer(modifier = Modifier.weight(1f))
-        Text(text = itemDetail, fontWeight = FontWeight.Bold)
+        Text(text = itemDetail, fontWeight = FontWeight.SemiBold)
     }
 }
 
