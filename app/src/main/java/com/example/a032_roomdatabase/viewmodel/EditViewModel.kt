@@ -7,7 +7,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.a032_roomdatabase.repositori.RepositoriSiswa
-import com.example.a032_roomdatabase.view.Route.DestinasiDetailSiswa
+import com.example.a032_roomdatabase.view.route.DestinasiDetailSiswa
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.example.a032_roomdatabase.view.Route
+package com.example.a032_roomdatabase.view.route
 
 import com.example.a032_roomdatabase.R
 
